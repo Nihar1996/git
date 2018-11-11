@@ -3,6 +3,8 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import {AuthService} from "../../providers/auth-service";
 import {ForgotPasswordPage} from "../forgot-password/forgot-password"
+import {Signup} from "../signup/signup"
+
 /**
  * Generated class for the Login page.
  *
@@ -32,7 +34,7 @@ export class Login {
 	  inputData["password"]=this.userData.password;
 	   
    if(this.userData.username && this.userData.password){
-    this.authService.postData(inputData, "login").then((result) =>{
+    this.authService.postData(inputData).then((result) =>{
     this.resposeData = result;
     console.log(this.resposeData);
     if(this.resposeData.homeId.homeId==1){
@@ -71,4 +73,11 @@ forgetPassword()
     toast.present();
   }
 
+signup()
+{
+	console.log("Inside Forget Password");
+	this
+      .navCtrl
+      .push(Signup);
+}
 }

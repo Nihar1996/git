@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 //let apiUrl = "http://localhost/PHP-Slim-Restful/api/";
-let apiUrl = 'https://www.autoiinnovations.com/Test/rest/login/authenticateUserWH';
+let loginUrl = 'https://www.autoiinnovations.com/Test/rest/login/authenticateUserWH';
 /*
   Generated class for the AuthService provider.
 
@@ -17,11 +17,26 @@ export class AuthService {
     console.log('Hello AuthService Provider');
   }
 
-  postData(credentials, type){
+  postData(credentials){
 
     return new Promise((resolve, reject) =>{
       let headers = new Headers();
-      this.http.post(apiUrl, {email: credentials.email, password: credentials.password }, {headers: headers}).
+      this.http.post(loginUrl, {email: credentials.email, password: credentials.password }, {headers: headers}).
+      subscribe(res =>{
+        resolve(res.json());
+      }, (err) =>{
+        reject(err);
+      });
+
+    });
+
+  }
+  
+  sendPasswordToMail(credentials){
+
+    return new Promise((resolve, reject) =>{
+      let headers = new Headers();
+      this.http.post('https://www.autoiinnovations.com/Test/rest/register/sendTemporaryPassword', {email: credentials.email}, {headers: headers}).
       subscribe(res =>{
         resolve(res.json());
       }, (err) =>{

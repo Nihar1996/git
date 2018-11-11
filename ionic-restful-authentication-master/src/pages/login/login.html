@@ -1,21 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5" style="background-color:#2CE4CF;">
 
-
-
-<ion-content padding>
-<ion-list>
-
-  <ion-item>
-    <ion-label fixed>Username</ion-label>
-    <ion-input type="text" value="" [(ngModel)]="userData.username"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label fixed>Password</ion-label>
-    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
-  </ion-item>
-
-  <button ion-button block color="primary" (click)="login()">Login</button>
-   <button ion-button block color="primary" (click)="forgetPassword()">Forget Password</button>
-
-</ion-list>
+    <ion-list id="login-list3">
+      <ion-item id="login-input1">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder="" [(ngModel)]="userData.username" ></ion-input>
+      </ion-item>
+      <ion-item id="login-input2">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="password" placeholder="" [(ngModel)]="userData.password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="login-spacer1"></div>
+    <button id="login-button1" ion-button color="stable" (click)="login()" block>
+      Log in
+    </button>
+    <button id="login-button2" ion-button clear color="dark" block (click)="signup()">
+      Or create an account
+    </button>
+    <button id="login-button4" ion-button clear color="dark" block (click)="forgetPassword()">
+      Forgot Password
+    </button>
+  
 </ion-content>

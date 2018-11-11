@@ -15,7 +15,7 @@ import {Login} from "../login/login";
 @Component({selector: 'page-signup', templateUrl: 'signup.html'})
 export class Signup {
   resposeData : any;
-  userData = {"username":"", "password":"","email":"","name":""};
+  userData = {"name":"", "password":"","email":"","phone":""};
   constructor(public navCtrl : NavController, public authService : AuthService, private toastCtrl:ToastController) {}
 
   ionViewDidLoad() {
@@ -23,33 +23,27 @@ export class Signup {
   }
 
   signup() {
-    if(this.userData.username && this.userData.password && this.userData.email && this.userData.name){
-      //Api connections
-    this.authService.postData(this.userData, "signup").then((result) =>{
-    this.resposeData = result;
-    if(this.resposeData.userData){
-      console.log(this.resposeData);
-      localStorage.setItem('userData', JSON.stringify(this.resposeData) )
-      this.navCtrl.push(TabsPage);
-    }
-    else{
-      this.presentToast("Please give valid username and password");
-    }
+	  console.log(this.userData);
     
-    }, (err) => {
-      //Connection failed message
-    });
-  }
-  else {
-    console.log("Give valid information.");
-  }
-  
-  }
+   
+	  let inputData={};
+	  inputData["email"]=this.userData.username;
+	  console.log(inputData["email"]);
+	  if(inputData["email"]){
+     this.authService.sendPasswordToMail(inputData).then((result) =>{
+    this.resposeData = result;
+    console.log(this.resposeData);
+    //if(this.resposeData.response.homeId==1){
+     //localStorage.setItem('userData', JSON.stringify(this.resposeData) )
+	 console.log("Successfully Logged In");
+   // this.navCtrl.push(TabsPage);
+   
+   
+	});
+	}
+	
 
-  login() {
-    this
-      .navCtrl
-      .push(Login);
+
   }
 
   presentToast(msg) {

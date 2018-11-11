@@ -1,28 +1,44 @@
-<ion-content padding>
-<ion-list>
-
-  <ion-item>
-    <ion-label fixed>Name</ion-label>
-    <ion-input type="text"  [(ngModel)]="userData.name"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label fixed>Email</ion-label>
-    <ion-input type="text"  [(ngModel)]="userData.email"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label fixed>Username</ion-label>
-    <ion-input type="text"  [(ngModel)]="userData.username"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label fixed>Password</ion-label>
-    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
-  </ion-item>
-
-  <button ion-button block color="primary" (click)="signup()">Signup</button>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Signup
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page6" style="background-color:#2CE4CF;">
   
-  <a href="#" (click)="login()">Login Page</a>
-</ion-list>
+    <ion-list id="signup-list4">
+      <ion-item id="signup-input3">
+        <ion-label>
+          Name
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="userData.name" ></ion-input>
+      </ion-item>
+      <ion-item id="signup-input4">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder="" [(ngModel)]="userData.email"></ion-input>
+      </ion-item>
+      <ion-item id="signup-input5">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="password" placeholder="" [(ngModel)]="userData.password"></ion-input>
+      </ion-item>
+	  <ion-item id="signup-input6">
+      <ion-label>
+        Phone
+      </ion-label>
+      <ion-input type="text" placeholder="" [(ngModel)]="userData.phone"></ion-input>
+    </ion-item>
+    
+    </ion-list>
+    <button id="signup-button3" ion-button color="stable" (click)="signup()" block>
+      Sign up
+    </button>
+  
 </ion-content>
