@@ -27,10 +27,13 @@ export class Signup {
     
    
 	  let inputData={};
-	  inputData["email"]=this.userData.username;
+	  inputData["email"]=this.userData.email;
+	  inputData["name"]=this.userData.name;
+	  inputData["phone"]=this.userData.phone;
+	  inputData["password"]=this.userData.password;
 	  console.log(inputData["email"]);
 	  if(inputData["email"]){
-     this.authService.sendPasswordToMail(inputData).then((result) =>{
+     this.authService.signup(inputData).then((result) =>{
     this.resposeData = result;
     console.log(this.resposeData);
     //if(this.resposeData.response.homeId==1){

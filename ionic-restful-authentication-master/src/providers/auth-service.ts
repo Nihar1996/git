@@ -47,4 +47,25 @@ export class AuthService {
 
   }
 
+  signup(credentials){
+
+  let data={};
+  data["email"]=credentials.email;
+  data["name"]=credentials.name;
+  data["phone"]=credentials.phone;
+  data["password"]=credentials.password;
+  data["mode"]="C";
+    return new Promise((resolve, reject) =>{
+      let headers = new Headers();
+      this.http.post('https://autoiinnovations.com/Test/rest/register/registerMemberWH',data, {headers: headers}).
+      subscribe(res =>{
+        resolve(res.json());
+      }, (err) =>{
+        reject(err);
+      });
+
+    });
+
+  }
+
 }
