@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { NavController, App } from "ionic-angular";
-import { AuthService } from "../../providers/auth-service";
+import { AuthServiceCustom } from "../../providers/auth-service";
 import { Common } from "../../providers/common";
 
 @Component({ selector: "page-home", templateUrl: "home.html" })
@@ -23,7 +23,7 @@ export class HomePage {
     //private alertCtrl: AlertController,
     public navCtrl: NavController,
     public app: App,
-    public authService: AuthService
+    public authService: AuthServiceCustom
   ) {
     const data = JSON.parse(localStorage.getItem("userData"));
     this.userDetails = data.userData;

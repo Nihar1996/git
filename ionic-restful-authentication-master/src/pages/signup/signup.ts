@@ -1,10 +1,9 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, ToastController} from 'ionic-angular';
-import {AuthService} from "../../providers/auth-service";
+import {AuthServiceCustom} from "../../providers/auth-service";
 
-import {TabsPage} from '../tabs/tabs';
-import {Login} from "../login/login";
 
+ 
 /**
  * Generated class for the Signup page.
  *
@@ -16,12 +15,12 @@ import {Login} from "../login/login";
 export class Signup {
   resposeData : any;
   userData = {"name":"", "password":"","email":"","phone":""};
-  constructor(public navCtrl : NavController, public authService : AuthService, private toastCtrl:ToastController) {}
+  constructor(public navCtrl : NavController, public authService : AuthServiceCustom, private toastCtrl:ToastController ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Signup');
   }
-
+  
   signup() {
 	  console.log(this.userData);
     

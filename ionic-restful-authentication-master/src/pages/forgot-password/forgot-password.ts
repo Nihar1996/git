@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {AuthService} from "../../providers/auth-service";
+import {AuthServiceCustom} from "../../providers/auth-service";
 /**
  * Generated class for the ForgotPasswordPage page.
  *
@@ -18,7 +18,7 @@ export class ForgotPasswordPage {
   resposeData : any;
   userData = {"username":""};
 
-  constructor(public navCtrl: NavController, public authService: AuthService, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public authService: AuthServiceCustom, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

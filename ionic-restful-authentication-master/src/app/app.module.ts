@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AuthService } from '../providers/auth-service';
+import { AuthServiceCustom } from '../providers/auth-service';
 import { SplitPane } from '../providers/split-pane';
 import { Common } from '../providers/common';
 import { HttpModule } from "@angular/http";
@@ -14,12 +14,36 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import {MenuPage} from "../pages/home-1/home-1";
+import {DevicesPage} from "../pages/devices/devices";
+import {ProfilePage} from "../pages/profile/profile";
+import {TabsPageModule} from "../pages/tabs/tabs.module";
+import {ProfilePageModule} from "../pages/profile/profile.module";
+import {DevicesPageModule} from "../pages/devices/devices.module";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MomentModule } from 'angular2-moment';
 import { LinkyModule } from 'angular-linky';
+    import {
+    SocialLoginModule,
+    AuthServiceConfig,
+    GoogleLoginProvider,
+    
+} from "angular-6-social-login";
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("910042342275-aqo86ppoe4eslo1kbnh2ck6erpihqtrt.apps.googleusercontent.com")
+        }
+      ]
+  );
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -31,11 +55,15 @@ import { LinkyModule } from 'angular-linky';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+
+	MenuPage,
+	
   ],
   imports: [
     BrowserModule,HttpModule,MomentModule,LinkyModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),SocialLoginModule,
+	TabsPageModule,ProfilePageModule,
+	DevicesPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,11 +75,15 @@ import { LinkyModule } from 'angular-linky';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+	MenuPage,
+	ProfilePage,
+	DevicesPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,AuthService,SplitPane,Common,
+    SplashScreen,AuthServiceCustom,SplitPane,Common,{provide:AuthServiceConfig,
+	useFactory: getAuthServiceConfigs},
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

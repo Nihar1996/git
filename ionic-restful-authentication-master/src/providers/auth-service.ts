@@ -11,7 +11,7 @@ let loginUrl = 'https://www.autoiinnovations.com/Test/rest/login/authenticateUse
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class AuthService {
+export class AuthServiceCustom {
 
   constructor(public http: Http) {
     console.log('Hello AuthService Provider');

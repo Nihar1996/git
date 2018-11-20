@@ -3,7 +3,7 @@ import { Platform, App, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SplitPane } from '../providers/split-pane';
-import { Welcome } from '../pages/welcome/welcome';
+
 import {Login} from "../pages/login/login"
 @Component({
   templateUrl: 'app.html'
