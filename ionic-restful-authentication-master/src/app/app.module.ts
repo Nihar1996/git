@@ -17,6 +17,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {MenuPage} from "../pages/home-1/home-1";
 import {DevicesPage} from "../pages/devices/devices";
 import {ProfilePage} from "../pages/profile/profile";
+import {DashboardTabsPage} from "../pages/dashboard-tabs/dashboard-tabs";
+import {ListsTabsPage} from "../pages/lists-tabs/lists-tabs";
 import {TabsPageModule} from "../pages/tabs/tabs.module";
 import {ProfilePageModule} from "../pages/profile/profile.module";
 import {DevicesPageModule} from "../pages/devices/devices.module";

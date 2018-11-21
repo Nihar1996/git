@@ -1,70 +1,25 @@
-import { ProfilePage } from './../profile/profile';
-import { DevicesPage } from './../devices/devices';
-import { TabsPage } from './../tabs/tabs';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, Nav } from 'ionic-angular';
+import { NavController, Nav } from 'ionic-angular';
  
-export interface PageInterface {
-  title: string;
-  pageName: string;
-  component?: any;
-  index?: number;
-  icon: string;
-}
- 
-@IonicPage()
 @Component({
-  selector: 'page-menu',
-  templateUrl: 'menu.html',
+  selector: 'page-home',
+  templateUrl: 'home.html'
 })
 export class MenuPage {
-  // Basic root for our content view
-  rootPage = 'TabsPage';
- 
-  // Reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
+  pages: Array<{title: string, component: any, openTab? : any}>;
+  rootPage = 'DashboardTabsPage';
  
-  pages: PageInterface[] = [
-    { title: 'Profile', pageName: 'TabsPage', component: 'ProfilePage', index: 0, icon: 'home' },
-    { title: 'Devices', pageName: 'TabsPage', component: 'DevicesPage', index: 1, icon: 'contacts' }
-  ];
- 
-  constructor(public navCtrl: NavController) { }
- 
-  openPage(page: PageInterface) {
-    let params = {};
- 
-    // The index is equal to the order of our tabs inside tabs.ts
-    if (page.index) {
-      params = { tabIndex: page.index };
-    }
- 
-    // The active child nav is our Tabs Navigation
-    if (this.nav.getActiveChildNav() && page.index != undefined) {
-      this.nav.getActiveChildNav().select(page.index);
-    } else {
-      // Tabs are not active, so reset the root page 
-      // In this case: moving to or from SpecialPage
-      this.nav.setRoot(page.pageName, params);
-    }
+  constructor(public navCtrl: NavController) {
+    this.pages = [
+      { title: 'Dashboard', component: 'DashboardTabsPage' },
+      { title: 'My Lists', component: 'ListsTabsPage' },
+      { title: 'Direkt Profile Link', component: 'DashboardTabsPage', openTab: 1 },
+      { title: 'No Tabs Link', component: 'NoTabsPage' },
+    ];
   }
  
-  isActive(page: PageInterface) {
-    // Again the Tabs Navigation
-    let childNav = this.nav.getActiveChildNav();
- 
-    if (childNav) {
-      if (childNav.getSelected() && childNav.getSelected().root === page.component) {
-        return 'primary';
-      }
-      return;
-    }
- 
-    // Fallback needed when there is no active childnav (tabs not active)
-    if (this.nav.getActive() && this.nav.getActive().name === page.pageName) {
-      return 'primary';
-    }
-    return;
+  openPage(page) {
+    this.nav.setRoot(page.component, { openTab: page.openTab });
   }
- 
 }
