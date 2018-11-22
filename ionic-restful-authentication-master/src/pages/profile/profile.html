@@ -1,14 +1,38 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons start>
-      <button ion-button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    </ion-buttons>
-    <ion-title>Special</ion-title>
+    <ion-title>
+      My Profile
+    </ion-title>
   </ion-navbar>
 </ion-header>
- 
-<ion-content padding>
-  This page has no tabs!
+<ion-content padding id="page6" style="background-color:#2CE4CF;">
+  
+    <ion-list id="signup-list4">
+      <ion-item id="signup-input3">
+        <ion-label>
+          Name
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="userData.name" ></ion-input>
+      </ion-item>
+      <ion-item id="signup-input4">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder="" [(ngModel)]="userData.email"></ion-input>
+      </ion-item>
+      <ion-item id="signup-input6">
+      <ion-label>
+        Phone
+      </ion-label>
+      <ion-input type="text" placeholder="" [(ngModel)]="userData.phone"></ion-input>
+    </ion-item>
+    
+    </ion-list>
+    <button id="signup-button3" ion-button color="stable" (click)="signup()" block>
+      Save
+    </button>
+  
 </ion-content>

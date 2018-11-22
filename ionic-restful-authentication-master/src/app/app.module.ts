@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AuthServiceCustom } from '../providers/auth-service';
+import { AccountService } from '../providers/account-service';
+
 import { SplitPane } from '../providers/split-pane';
 import { Common } from '../providers/common';
 import { HttpModule } from "@angular/http";
@@ -84,7 +86,7 @@ export function getAuthServiceConfigs() {
   ],
   providers: [
     StatusBar,
-    SplashScreen,AuthServiceCustom,SplitPane,Common,{provide:AuthServiceConfig,
+    SplashScreen,AuthServiceCustom,AccountService,SplitPane,Common,{provide:AuthServiceConfig,
 	useFactory: getAuthServiceConfigs},
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
