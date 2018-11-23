@@ -32,6 +32,37 @@ export class AccountService {
 
   }
   
+  
+  saveProfileData(credentials){
+
+    return new Promise((resolve, reject) =>{
+      let headers = new Headers();
+      this.http.post('https://www.autoiinnovations.com/rest/register/updateProfile', {email: credentials.email,name: credentials.name,phone: credentials.phone}, {headers: headers}).
+      subscribe(res =>{
+        resolve(res.json());
+      }, (err) =>{
+        reject(err);
+      });
+
+    });
+
+  }
+  
+  changePassword(credentials){
+
+    return new Promise((resolve, reject) =>{
+      let headers = new Headers();
+      this.http.post('https://www.autoiinnovations.com/rest/register/changePassword', {email: credentials.email,password: credentials.password}, {headers: headers}).
+      subscribe(res =>{
+        resolve(res.json());
+      }, (err) =>{
+        reject(err);
+      });
+
+    });
+
+  }
+  
   sendPasswordToMail(credentials){
 
     return new Promise((resolve, reject) =>{

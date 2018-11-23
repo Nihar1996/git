@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, ToastController} from 'ionic-angular';
 import {AccountService} from "../../providers/account-service";
-
+import {ChangepasswordPage} from "../changepassword/changepassword";
 
  
 /**
@@ -54,4 +54,46 @@ export class ProfilePage {
     toast.present();
   }
 
+  save(){
+	  let inputData={};
+	  inputData["email"]=this.userData.email;
+	  inputData["phone"]=this.userData.phone;
+	  inputData["name"]=this.userData.name;
+	   
+   if(this.userData.name){
+    this.accountService.saveProfileData(inputData).then((result) =>{
+    this.resposeData = result;
+    console.log(this.resposeData);
+    /* if(this.resposeData.homeId.homeId==1){
+     //localStorage.setItem('userData', JSON.stringify(this.resposeData) )
+	 //    this.navCtrl.setRoot(MenuPage);
+
+	 console.log("Successfully Logged In");
+   // this.navCtrl.push(TabsPage);
+  }
+  else{
+	  /* this
+      .navCtrl
+      .push(MenuPage); 
+    this.presentToast("Please give valid username and password");
+  } */
+    
+
+
+    }, (err) => {
+      //Connection failed message
+    });
+   }
+   else{
+    this.presentToast("Please provide name");
+   }
+  
+  }
+  
+  changePassword()
+  {
+	   this
+      .navCtrl
+      .push(ChangepasswordPage); 
+  }
 }

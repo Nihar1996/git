@@ -19,6 +19,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {MenuPage} from "../pages/home-1/home-1";
 import {DevicesPage} from "../pages/devices/devices";
 import {ProfilePage} from "../pages/profile/profile";
+import {ChangepasswordPage} from "../pages/changepassword/changepassword";
+
 import {DashboardTabsPage} from "../pages/dashboard-tabs/dashboard-tabs";
 import {ListsTabsPage} from "../pages/lists-tabs/lists-tabs";
 import {TabsPageModule} from "../pages/tabs/tabs.module";
@@ -59,7 +61,7 @@ export function getAuthServiceConfigs() {
     AboutPage,
     ContactPage,
     HomePage,
-
+ChangepasswordPage,
 	MenuPage,
 	
   ],
@@ -82,6 +84,7 @@ export function getAuthServiceConfigs() {
     TabsPage,
 	MenuPage,
 	ProfilePage,
+	ChangepasswordPage,
 	DevicesPage
   ],
   providers: [
