@@ -4,14 +4,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SplitPane } from '../providers/split-pane';
 
-import {Login} from "../pages/login/login"
-import {ProfilePage} from "../pages/profile/profile"
+import {Login} from "../pages/login/login";
+import {AddcontrollerPage} from "../pages/addcontroller/addcontroller";
+import {DevicesPage} from "../pages/devices/devices";
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ProfilePage;
-
+  rootPage:any = DevicesPage;
+	
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public app: App, public splitPane: SplitPane, public menu: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

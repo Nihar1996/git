@@ -4,7 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AuthServiceCustom } from '../providers/auth-service';
 import { AccountService } from '../providers/account-service';
-
+import { ActionService } from '../providers/action-service';
+import {StoreService} from "../providers/store-service";
 import { SplitPane } from '../providers/split-pane';
 import { Common } from '../providers/common';
 import { HttpModule } from "@angular/http";
@@ -20,7 +21,8 @@ import {MenuPage} from "../pages/home-1/home-1";
 import {DevicesPage} from "../pages/devices/devices";
 import {ProfilePage} from "../pages/profile/profile";
 import {ChangepasswordPage} from "../pages/changepassword/changepassword";
-
+import {AddcontrollerPage} from "../pages/addcontroller/addcontroller";
+import {UpdateControllerPage} from "../pages/update-controller/update-controller";
 import {DashboardTabsPage} from "../pages/dashboard-tabs/dashboard-tabs";
 import {ListsTabsPage} from "../pages/lists-tabs/lists-tabs";
 import {TabsPageModule} from "../pages/tabs/tabs.module";
@@ -62,6 +64,8 @@ export function getAuthServiceConfigs() {
     ContactPage,
     HomePage,
 ChangepasswordPage,
+AddcontrollerPage,
+UpdateControllerPage,
 	MenuPage,
 	
   ],
@@ -85,11 +89,13 @@ ChangepasswordPage,
 	MenuPage,
 	ProfilePage,
 	ChangepasswordPage,
-	DevicesPage
+	AddcontrollerPage,
+	DevicesPage,
+	UpdateControllerPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,AuthServiceCustom,AccountService,SplitPane,Common,{provide:AuthServiceConfig,
+    SplashScreen,AuthServiceCustom,AccountService,ActionService,StoreService,SplitPane,Common,{provide:AuthServiceConfig,
 	useFactory: getAuthServiceConfigs},
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

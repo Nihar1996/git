@@ -1,14 +1,49 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons start>
-      <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    </ion-buttons>
-    <ion-title>Devices</ion-title>
+    <ion-title>My Rooms</ion-title>
   </ion-navbar>
 </ion-header>
- 
-<ion-content padding>
-  This page has devices
+
+<ion-content class="cards-bg">
+
+  <ion-card *ngFor="let room of roomInfo" id="{{room.id}}">
+
+   
+
+    <ion-card-content>
+      <ion-card-title>
+        {{room.name}}
+      </ion-card-title>
+      <p>
+     {{room.deviceName1}}
+      </p>
+	  <p>
+     {{room.deviceName2}}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start (click)=edit(room)>
+          <ion-icon name='edit'></ion-icon>
+          Update
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='musical-notes'></ion-icon>
+          Schdeule
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='share-alt'></ion-icon>
+          Delete
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+
 </ion-content>
