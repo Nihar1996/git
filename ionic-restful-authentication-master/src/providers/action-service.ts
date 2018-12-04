@@ -47,7 +47,35 @@ export class ActionService {
 
   }
   
+  scheduleDevice(controllerData){
+
+    return new Promise((resolve, reject) =>{
+      let headers = new Headers();
+      this.http.post('https://www.autoiinnovations.com/Test/rest/controller/scheduleDevice',controllerData, {headers: headers}).
+      subscribe(res =>{
+        resolve(res.json());
+      }, (err) =>{
+        reject(err);
+      });
+
+    });
+
+  }
   
+  deleteSchedule(controllerData){
+
+    return new Promise((resolve, reject) =>{
+      let headers = new Headers();
+      this.http.post('https://www.autoiinnovations.com/Test/rest/controller/scheduleDevice',controllerData, {headers: headers}).
+      subscribe(res =>{
+        resolve(res.json());
+      }, (err) =>{
+        reject(err);
+      });
+
+    });
+
+  }
   
   
   

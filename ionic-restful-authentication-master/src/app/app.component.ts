@@ -7,7 +7,8 @@ import { SplitPane } from '../providers/split-pane';
 import {Login} from "../pages/login/login";
 import {AddcontrollerPage} from "../pages/addcontroller/addcontroller";
 import {DevicesPage} from "../pages/devices/devices";
-
+import {ViewScheduledDevicesPage} from "../pages/view-scheduled-devices/view-scheduled-devices";
+import {SchedulePage} from "../pages/schedule/schedule";
 @Component({
   templateUrl: 'app.html'
 })

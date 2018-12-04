@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {UpdateControllerPage} from "../update-controller/update-controller";
 import {StoreService} from "../../providers/store-service";
+import {SchedulePage} from "../schedule/schedule";
+
+import {ActionService} from "../../providers/action-service";
 /**
  * Generated class for the DevicesPage page.
  *
@@ -17,10 +20,12 @@ import {StoreService} from "../../providers/store-service";
 export class DevicesPage {
 data : any =  
       {"C001":{"1":"Light","2":"Fan"},"C005":{"1":"AC","2":"Geyser"},"controllers":{"C001":"Bathroom","C005":"Bedroom"},"homeId":{"homeId":"H1"}};
-
+  
+scheduleTime: any ;
 roomInfo : any;
 updatedData: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private store: StoreService) {
+resposeData: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private store: StoreService,public actionService : ActionService) {
 	
 	let rooms =[];
 	let i=0;
@@ -44,6 +49,10 @@ updatedData: any;
 
 	this.roomInfo=rooms;
   }
+  
+  private onConnected():void {
+    console.log('Connected to broker.');
+  }
 edit(room)
 {
 	//this.roomData=room;
@@ -52,6 +61,21 @@ edit(room)
 	  this
       .navCtrl
       .push(UpdateControllerPage);
+    
+}
+schedule(deviceID,roomId)
+{
+	
+	
+	let deviceId={};
+	deviceId["controllerID"]=roomId;
+	deviceId["userID"]="soumyajit0405@gmail.com";
+	deviceId["deviceID"]=deviceID;
+	 this.store.deviceData = deviceId;
+
+	  this
+      .navCtrl
+      .push(SchedulePage);
     
 }
   ionViewDidLoad() {

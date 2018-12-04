@@ -30,6 +30,9 @@ import {ProfilePageModule} from "../pages/profile/profile.module";
 import {DevicesPageModule} from "../pages/devices/devices.module";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {ViewScheduledDevicesPage} from "../pages/view-scheduled-devices/view-scheduled-devices";
+import {SchedulePage} from "../pages/schedule/schedule";
+
 
 import { MomentModule } from 'angular2-moment';
 import { LinkyModule } from 'angular-linky';
@@ -67,7 +70,8 @@ ChangepasswordPage,
 AddcontrollerPage,
 UpdateControllerPage,
 	MenuPage,
-	
+	ViewScheduledDevicesPage,
+	SchedulePage
   ],
   imports: [
     BrowserModule,HttpModule,MomentModule,LinkyModule,
@@ -91,7 +95,9 @@ UpdateControllerPage,
 	ChangepasswordPage,
 	AddcontrollerPage,
 	DevicesPage,
-	UpdateControllerPage
+	UpdateControllerPage,
+	ViewScheduledDevicesPage,
+	SchedulePage
   ],
   providers: [
     StatusBar,

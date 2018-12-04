@@ -16,10 +16,46 @@
       </ion-card-title>
       <p>
      {{room.deviceName1}}
+	  <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start (click)=edit(room.deviceId1)>
+         
+          ON
+        </button>
+      </ion-col>
+	   <ion-col text-center>
+	   
+     
+        <button ion-button clear small color="danger" icon-start (click)=schedule(room.deviceId1,room.id)>
+          <ion-icon name='musical-notes'></ion-icon>
+          Schdeule
+        </button>
+      </ion-col>
+      </ion-row>
+
+
       </p>
 	  <p>
      {{room.deviceName2}}
+	  <ion-row no-padding>
+      <ion-col>
+	
+	  <button ion-button clear small color="danger" icon-start (click)=edit(room.deviceId2)>
+         
+          ON
+        </button>
+      </ion-col>
+      <ion-col text-center>
+
+        <button ion-button clear small color="danger" icon-start (click)=schedule(room.deviceId2,room.id)>
+          <ion-icon name='musical-notes'></ion-icon>
+          Schdeule
+        </button>
+      </ion-col>
+      </ion-row>
+
       </p>
+	 
     </ion-card-content>
 
     <ion-row no-padding>
@@ -29,17 +65,15 @@
           Update
         </button>
       </ion-col>
-      <ion-col text-center>
-        <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='musical-notes'></ion-icon>
-          Schdeule
-        </button>
-      </ion-col>
       <ion-col text-right>
         <button ion-button clear small color="danger" icon-start>
           <ion-icon name='share-alt'></ion-icon>
           Delete
         </button>
+		
+        
+    
+
       </ion-col>
     </ion-row>
 
@@ -47,3 +81,4 @@
 
 
 </ion-content>
+   

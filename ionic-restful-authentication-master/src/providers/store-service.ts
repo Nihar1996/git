@@ -14,6 +14,7 @@ let loginUrl = 'https://www.autoiinnovations.com/Test/rest/login/authenticateUse
 export class StoreService {
 
 	roomData : any;
+	deviceData : any;
   constructor(public http: Http) {
     console.log('Hello AccountService Provider');
   }

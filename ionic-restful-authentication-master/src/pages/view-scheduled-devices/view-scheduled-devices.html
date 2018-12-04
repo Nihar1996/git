@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Schedules</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg">
+
+  <ion-card *ngFor="let schedule of scheduleInfo" id="{{schedule.controllerId}}">
+
+   
+
+    <ion-card-content>
+      <ion-card-title>
+        {{schedule.controllerId}}
+      </ion-card-title>
+      <p>
+    Bedroom Light to be ON at {{schedule.time}}
+	  
+      </p>
+	 
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start (click)=delete(schedule.controllerId,schedule.deviceId)>
+          <ion-icon name='share-alt'></ion-icon>
+          Delete
+        </button>
+		
+        
+    
+
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+
+</ion-content>
+   
