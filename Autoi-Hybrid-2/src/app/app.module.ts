@@ -34,7 +34,9 @@ import {DevicesPage} from "../pages/devices/devices";
 import {UpdateControllerPage} from "../pages/update-controller/update-controller";
 import {ViewScheduledDevicesPage} from "../pages/view-scheduled-devices/view-scheduled-devices";
 import {SchedulePage} from "../pages/schedule/schedule";
+import {MetricsPage} from "../pages/metrics/metrics";
 
+import { ChartsModule } from 'ng2-charts';
 
 import { HttpModule } from '@angular/http';
 
@@ -64,12 +66,14 @@ import { HttpModule } from '@angular/http';
 	DevicesPage,
 	UpdateControllerPage,
 	ViewScheduledDevicesPage,
-	SchedulePage
+	SchedulePage,
+	MetricsPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
 	HttpModule,
+	ChartsModule,
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
       scrollAssist: true,
@@ -99,7 +103,8 @@ import { HttpModule } from '@angular/http';
 	DevicesPage,
 	UpdateControllerPage,
 	ViewScheduledDevicesPage,
-	SchedulePage
+	SchedulePage,
+	MetricsPage
   ],
   providers: [
     StatusBar,

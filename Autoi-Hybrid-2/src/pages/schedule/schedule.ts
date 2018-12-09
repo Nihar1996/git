@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {StoreService} from "../../providers/store-service";
-
+//import {AuthServiceCustom} from "../../providers/auth-service";
 /**
  * Generated class for the SchedulePage page.
  *
@@ -31,7 +31,7 @@ export class SchedulePage {
   }
    schedule()
   {
-	 this.actionService.scheduleDevice(deviceId).then((result) =>{
+	/*  this.actionService.scheduleDevice(deviceId).then((result) =>{
     this.resposeData = result;
     console.log(this.resposeData);
     //if(this.resposeData.response.homeId==1){
@@ -40,7 +40,7 @@ export class SchedulePage {
    // this.navCtrl.push(TabsPage);
    
    
-	});
+	}); */
 	 }
  
 }

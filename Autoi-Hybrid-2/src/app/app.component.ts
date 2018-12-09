@@ -12,7 +12,7 @@ import {AddcontrollerPage} from "../pages/addcontroller/addcontroller";
 import {ProfilePage} from "../pages/profile/profile";
 import {DevicesPage} from "../pages/devices/devices";
 import {ViewScheduledDevicesPage} from "../pages/view-scheduled-devices/view-scheduled-devices";
-
+import {MetricsPage} from "../pages/metrics/metrics";
 export interface MenuItem {
     title: string;
     component: any;
@@ -43,6 +43,8 @@ export class MyApp {
       {title: 'Add Controller', component: AddcontrollerPage, icon: 'partly-sunny'},
 	  {title: 'My Rooms', component: DevicesPage, icon: 'partly-sunny'},
 	  {title: 'My Schedules', component: ViewScheduledDevicesPage, icon: 'partly-sunny'},
+	  {title: 'Metrics', component: MetricsPage, icon: 'partly-sunny'}
+	  
 	  
     ];
   }
