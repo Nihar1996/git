@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+     Schedule
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="auth-page">
+  <div class="login-content">
+    <ion-item id="signup-input5">
+        <ion-label>
+         Room Name
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="scheduleData.rname"></ion-input>
+      </ion-item>
+	  <ion-item id="signup-input6">
+      <ion-label>
+        Device
+      </ion-label>
+      <ion-input type="text" placeholder="" [(ngModel)]="scheduleData.dname"></ion-input>
+    </ion-item>
+    
+	<ion-item id="signup-input6">
+      <ion-label>
+        Time
+      </ion-label>
+      <ion-input type="time" placeholder="" [(ngModel)]="scheduleData.time"></ion-input>
+    </ion-item>
+    
+    <button id="signup-button3" ion-button color="stable" (click)="schedule()" block>
+      Schedule
+    </button>
+  </div>
+</ion-content>
