@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.autoiinnovations.beans">
+
+   <class name="WHControllerInventoryBean" table="wh_controller_inventory">      
+      <id name="id" type="int" column="id">
+         <generator class="assigned"/>
+      </id>
+      <property name="controllerID" column="controller_id" type="string"/>
+       
+      <property name="passKey" column="pass_key" type="string"/>
+      <property name="status" column="status" type="string"/>
+      <property name="topic" column="topic" type="string"/>
+      <property name="dateOfPurchase" column="date_of_purchase" type="date"/>
+       <property name="dateOfActivation" column="date_of_activation" type="date"/>
+        <property name="dateOfShelf" column="date_of_shelf" type="date"/>
+         <property name="extraInfo2" column="extra_info2" type="string"/>
+          <property name="extraInfo3" column="extra_info3" type="string"/>
+          <property name="extraInfo4" column="extra_info4" type="string"/>
+           <property name="extraInfo5" column="extra_info5" type="string"/>
+            <property name="extraInfo1" column="extra_info1" type="timestamp"/>
+             <property name="productCode" column="product_code" type="string"/>
+              
+        
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.autoiinnovations.beans">
+
+   <class name="WHScheduler" table="wh_schdeuler">      
+      <id name="id" type="int" column="id">
+         <generator class="assigned"/>
+      </id>
+      <property name="controllerID" column="controller_id" type="string"/>      
+      <property name="userID" column="user_id" type="string"/>
+       <property name="deviceID" type="int" column="device_id"/>
+      <property name="status" column="status" type="string"/>
+        <property name="mode" column="mode" type="string"/>
+         <property name="startTime" column="start_time" type="string"/>
+         <property name="endTime" column="end_time" type="string"/>
+         <property name="startDate" column="start_date" type="date"/>
+         <property name="endDate" column="end_date" type="date"/>
+          <property name="description" column="description" type="string"/>
+        
+   </class>
+</hibernate-mapping>

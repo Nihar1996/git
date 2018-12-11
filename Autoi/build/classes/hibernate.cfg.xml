@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/autoiinno_autoi_db?noAccessToProcedureBodies=true</property>
+		<property name="connection.username">autoiinno_autoi1</property>
+		<property name="connection.password">Autoi@12345</property>
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">10</property>
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		   <property name="hibernate.jdbc.batch_size">10</property>
+		
+		<!-- Drop and re-create the database schema on startup -->
+		
+			<property name="hbm2ddl.auto">update</property>
+			
+			 		  
+		
+	<!-- 	<mapping resource="UsrLogInfo.hbm.xml"/> -->
+		  
+		                    <mapping resource="WHController.hbm.xml"/>
+		                      <mapping resource="WHDeviceInfo.hbm.xml"/>
+		                        <mapping resource="WHDeviceLogInfo.hbm.xml"/>
+		                         <mapping resource="WHControllerInventory.hbm.xml"/>
+		                          <mapping resource="WHUser.hbm.xml"/>
+		                          <mapping resource="WHScheduler.hbm.xml"/>
+		                          <mapping resource="WHControllerMapping.hbm.xml"/>
+		                          
+		                         
+	</session-factory>
+</hibernate-configuration>
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.autoiinnovations.beans">
+
+   <class name="WHDeviceBean" table="wh_device">      
+      <id name="deviceID" type="int" column="device_id">
+         <generator class="assigned"/>
+      </id>
+      <property name="controllerID" column="controller_id" type="string"/> 
+      <property name="secondaryDeviceId" column="secondary_device_id" type="int"/>     
+     
+      <property name="description" column="description" type="string"/>
+      <property name="deviceName" column="device_name" type="string"/>
+ 		<property name="extraInfo1" column="extra_info1" type="string"/>
+      <property name="currentStatus" column="current_status" type="string"/>
+      <property name="extraInfo2" column="extra_info2" type="string"/>
+        
+   </class>
+</hibernate-mapping>

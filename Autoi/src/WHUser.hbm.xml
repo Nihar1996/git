@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.autoiinnovations.beans">
+
+	<class name="WHUserBean" table="wh_user">
+		<id name="id" type="int" column="id">
+			<generator class="assigned" />
+		</id>
+
+		<property name="email" column="email" type="string" />
+		<property name="userId" column="user_id" type="string" />
+		<property name="name" column="name" type="string" />
+		<property name="phone" column="phone" type="string" />
+		<property name="password" column="password" type="string" />
+		<property name="mode" column="mode" type="string" />
+		
+		<property name="extraInfo1" column="extra_info1" type="string" />
+		<property name="extraInfo2" column="extra_info2" type="string" />
+
+	</class>
+</hibernate-mapping>
