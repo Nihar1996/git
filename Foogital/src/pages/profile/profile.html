@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+     Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    
+    <!-- Login form -->
+    
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Full Name
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="userData.name" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+       <ion-input type="email" placeholder="" [(ngModel)]="userData.email"></ion-input>
+      </ion-item>
+
+      
+	   <ion-item>
+        <ion-label floating>
+          <ion-icon name="phone" item-start class="text-primary"></ion-icon>
+          Phone
+        </ion-label>
+       <ion-input type="text" placeholder="" [(ngModel)]="userData.phone"></ion-input>
+      </ion-item>
+   
+    
+
+    <div margin-top>
+      <button ion-button block color="dark" tappable (click)="save()">
+        Save
+      </button>
+<button id="change-button2" ion-button clear color="dark" block (click)="changePassword()">
+      Change Password
+    </button>
+
+    </div>
+
+    <!-- Other links -->
+
+  </div>
+</ion-content>

@@ -3,6 +3,7 @@ import {NavController, AlertController, ToastController, MenuController} from "i
 import {HomePage} from "../home/home";
 import {RegisterPage} from "../register/register";
 import {AuthServiceCustom} from "../../providers/auth-service";
+import {StoreService} from "../../providers/store-service";
 import {DevicesPage} from "../devices/devices";
 @Component({
   selector: 'page-login',
@@ -12,7 +13,7 @@ export class LoginPage {
 resposeData : any;
   userData = {"username":"", "password":""};
 	
-  constructor(public nav: NavController, public forgotCtrl: AlertController, public menu: MenuController, public toastCtrl: ToastController,public authService: AuthServiceCustom) {
+  constructor(public nav: NavController, public forgotCtrl: AlertController, public menu: MenuController, public toastCtrl: ToastController,public authService: AuthServiceCustom,private store: StoreService) {
     this.menu.swipeEnable(false);
   }
 
@@ -32,6 +33,10 @@ resposeData : any;
     this.resposeData = result;
     console.log(this.resposeData);
     if(this.resposeData.homeId.homeId==1){
+		console.log(this.resposeData);
+		this.store.devicesData=this.resposeData;
+		localStorage.setItem("email",this.userData.username);
+		localStorage.setItem("devicesData",this.store.devicesData);
      //localStorage.setItem('userData', JSON.stringify(this.resposeData) )
 	     this.nav.setRoot(DevicesPage);
 
@@ -39,7 +44,16 @@ resposeData : any;
    // this.navCtrl.push(TabsPage);
   }
   else{
-	  this.nav.setRoot(DevicesPage); //this.presentToast("Please give valid username and password");
+	  let toast = this.toastCtrl.create({
+              message: 'Wrong Credentials',
+              duration: 3000,
+              position: 'top',
+              cssClass: 'dark-trans',
+              closeButtonText: 'OK',
+              showCloseButton: true
+            });
+            toast.present();
+	 // this.nav.setRoot(DevicesPage); //this.presentToast("Please give valid username and password");
   }
     
 
